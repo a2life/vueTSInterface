@@ -1,7 +1,6 @@
 <template>
-    <div>
-        <h1>{{title}}</h1>
-        <ul v-for = "item in appointments">
+    <div id="main-app">
+        <ul class="appointment-list" v-for = "(item,i) in appointments" :key="i">
             <li>{{item.petName}}</li>
         </ul>
     </div>
@@ -31,10 +30,10 @@
         "aptNotes": "This Chihuahua has not eaten for three days and is lethargic"
     }];
     export default Vue.extend(  {
-        name: 'App',
+        name: 'MainApp',
         data(){
             return {
-                title: "Appointment",
+
                 appointments: apts
             }
         }
@@ -44,5 +43,11 @@
 </script>
 
 <style scoped>
+    .appointment-list {
 
+        padding:0;
+        list-style-type: none;
+        margin: 10px 5%;
+        font-size: 1.7rem;
+    }
 </style>
