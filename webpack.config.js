@@ -53,13 +53,25 @@ module.exports = {
                    exclude: /node_modules/
                },*/
             {
+                type: 'javascript/auto',
+                test: /\.(json|html)/,
+                exclude: /(node_modules|bower_components)/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {name: '[name].[ext]'},
+                }]
+            },
+            {
+
                 test: /\.(png|jpg|gif|svg)$/,
-                loader:
-                    'file-loader',
-                options:
-                    {
-                        name: '[name].[ext]?[hash]'
-                    }
+                use: [{
+                    loader:
+                        'file-loader',
+                    options:
+                        {
+                            name: '[name].[ext]?[hash]'
+                        }
+                }]
             }
         ]
     },
@@ -75,11 +87,11 @@ module.exports = {
     resolve:
         {
             extensions: [".ts", ".tsx", ".js"],
-         /*   alias:
-                {
-                    'vue$':
-                        'vue/dist/vue.esm.js'
-                }*/
+            /*   alias:
+                   {
+                       'vue$':
+                           'vue/dist/vue.esm.js'
+                   }*/
         }
     ,
 
