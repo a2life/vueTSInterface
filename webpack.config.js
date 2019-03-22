@@ -7,7 +7,7 @@ module.exports = {
     entry: './process/main.ts',
     output: {
         path: path.resolve(__dirname, './app/builds'),
-        publicPath: 'builds/',
+        publicPath: '/builds/',
         filename: 'app.js'
     },
     module: {
@@ -53,7 +53,7 @@ module.exports = {
                    exclude: /node_modules/
                },*/
             {
-                test: /\.(png|jpg|gif|svg|json)$/,
+                test: /\.(png|jpg|gif|svg)$/,
                 loader:
                     'file-loader',
                 options:
@@ -96,7 +96,7 @@ module.exports = {
     ,
 
     devtool: '#eval-source-map'
-}
+};
 
 if (process.env.NODE_ENV === 'production') {
     module.exports.devtool = '#source-map';

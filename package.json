@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --content-base ./app",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --mode=production"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
@@ -16,6 +16,7 @@
     "moment": "^2.24.0"
   },
   "devDependencies": {
+    "@types/jquery": "^3.3.29",
     "cross-env": "^5.2.0",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
