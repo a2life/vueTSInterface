@@ -1,5 +1,6 @@
 let path = require('path');
 let webpack = require('webpack');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 
 module.exports = {
@@ -21,14 +22,7 @@ module.exports = {
                         // other preprocessors should work out of the box, no loader config like this necessary.
                         'scss': 'vue-style-loader!css-loader!sass-loader',
                         'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
-                        ts: [
-                            {
-                                loader: 'ts-loader',
-                                options: {
-                                    appendTsSuffixTo: [/\.vue$/]
-                                }
-                            }
-                        ]
+
                     },
                     esModule: true
                     // other vue-loader options go here
@@ -42,7 +36,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                use: ['vue-style-loader', 'css-loader']
 
             },
             {
@@ -74,12 +68,13 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery', 'window.jQuery': 'jquery'
-        })
+        }),
+        new VueLoaderPlugin()
     ],
 
     resolve:
         {
-            extensions: [".ts", ".tsx", ".js",'.vue'],
+            extensions: [".ts", ".tsx", ".js"],
          /*   alias:
                 {
                     'vue$':
