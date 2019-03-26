@@ -18,7 +18,7 @@
             }
         },
         created(): void {
-            $.getJSON('./builds/appointments.json')
+            $.getJSON('appointments.json')
                 .then(data=>{this.appointments=data});
         }
     })

@@ -1,13 +1,16 @@
 let path = require('path');
 let webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const devMode = process.env.NODE_ENV !== 'production';
+const htmlWebPackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 module.exports = {
-    entry: './process/main.ts',
+    entry: './src/main.ts',
     output: {
-        path: path.resolve(__dirname, './app/builds'),
-        publicPath: '/builds/',
+        path: path.resolve(__dirname, './app'),
+//        publicPath: '/',
         filename: 'app.js'
     },
     module: {
@@ -36,7 +39,8 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ['vue-style-loader', 'css-loader']
+                use: [
+                     devMode?'vue-style-loader':MiniCssExtractPlugin.loader, 'css-loader']
 
             },
             {
@@ -81,7 +85,20 @@ module.exports = {
             $: 'jquery',
             jQuery: 'jquery', 'window.jQuery': 'jquery'
         }),
+        new htmlWebPackPlugin({
+            filename: 'index.html',
+            template: './src/index.ejs'
+
+        }),
+    /*    new HtmlWebpackHarddiskPlugin({
+            alwaysWriteToDisk:true,
+        //    outputPath: path.resolve(__dirname,'app')
+        }),*/
         new VueLoaderPlugin()
+   ,   new MiniCssExtractPlugin({
+            filename: "[name].css",
+            chunkFilename:"[id].css"
+        })
     ],
 
     resolve:
@@ -93,15 +110,14 @@ module.exports = {
                            'vue/dist/vue.esm.js'
                    }*/
         }
-    ,
 
+    ,
     devServer: {
         historyApiFallback: true,
         noInfo:
             true
     }
     ,
-
     performance: {
         hints: false
     }
