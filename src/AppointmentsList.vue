@@ -1,12 +1,13 @@
 <template>
     <div>
-        <ul class="appointment-list" v-for="(item,i) in appointments" :key="i">
-            <li>
-                <div>{{item.petName}}</div>
-                <div>{{item.petOwner}}</div>
-                <div>{{item.aptData}}</div>
-                <div>{{item.aptNotes}}</div>
-            </li>
+        <ul class="appointment-list">
+            <appointment-Item v-for="(item,i) in appointments"
+                             :key="i"
+                             :appointment="item"
+
+
+            ></appointment-Item>
+
         </ul>
     </div>
 </template>
@@ -14,10 +15,14 @@
 <script lang="ts">
 
     import Vue from 'vue';
-    type app ={petName:string; petOwner:string; aptData:string; aptNotes:string }
-    export default Vue.extend( {
+    import appointmentListItem from './AppointmentListItem.vue';
+
+    export default Vue.extend({
         name: "appointment-List",
-        props: ['appointments'] as app[]
+        props: ['appointments'],
+        components: {
+            'appointment-Item': appointmentListItem
+        }
     })
 </script>
 
