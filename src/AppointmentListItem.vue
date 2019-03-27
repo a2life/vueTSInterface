@@ -9,10 +9,12 @@
 
 <script lang="ts">
     import Vue from 'vue';
-   type app= {petName:string; petOwner:string; aptDate:string; aptNotes:string }
+   interface Iapp {petName:String; petOwner:String; aptDate:String; aptNotes:String }
     export default Vue.extend( {
         name: "AppointmentListItem",
-        props: ['appointment'] as app[]
+        props: {appointment:{
+            type: Object as ()=>Iapp
+            }}
     })
 </script>
 
