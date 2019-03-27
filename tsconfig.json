@@ -6,6 +6,7 @@
     "sourceMap": true,
     "strict": true,
     "moduleResolution": "node"
+
   },
   "exclude": [
     "node_modules"
