@@ -1,5 +1,6 @@
 <template>
     <div id="main-app">
+        <add-appointment ></add-appointment>
         <appointment-list v-bind:appointments = 'appointments' ></appointment-list>
 
     </div>
@@ -8,6 +9,7 @@
 <script lang="ts" >
  import Vue from 'vue';
  import aList from './AppointmentsList.vue';
+ import addAppointment from './AddAppointment.vue';
     export default Vue.extend(  {
         name: 'MainApp',
         data(){
@@ -17,7 +19,8 @@
             }
         },
         components: {
-            'appointment-list': aList
+            'appointment-list': aList,
+            'add-appointment':addAppointment
         },
         created(): void {
             $.getJSON('appointments.json')
