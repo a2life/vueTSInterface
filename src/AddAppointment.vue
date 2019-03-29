@@ -13,14 +13,14 @@
             <form class="add-appointment form-horizontal">
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" htmlFor="petName">Pet Name</label>
+                    <label class="col-sm-2 control-label" for="petName">Pet Name</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="petName" placeholder="Pet's Name" />
                     </div><!-- col-sm-10 -->
                 </div><!-- form-group -->
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" htmlFor="petOwner">Pet Owner</label>
+                    <label class="col-sm-2 control-label" for="petOwner">Pet Owner</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
                                id="petOwner" placeholder="Owner's Name" />
@@ -28,18 +28,18 @@
                 </div><!-- form-group -->
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" htmlFor="aptDate">Date</label>
+                    <label class="col-sm-2 control-label" for="aptDate">Date</label>
                     <div class="col-sm-4">
                         <input type="date" class="form-control" id="aptDate"  />
                     </div><!-- col-sm-4 -->
-                    <label class="col-sm-2 control-label" htmlFor="aptTime">Time</label>
+                    <label class="col-sm-2 control-label" for="aptTime">Time</label>
                     <div class="col-sm-4">
                         <input type="time" class="form-control" id="aptTime" />
                     </div><!-- col-sm-4 -->
                 </div><!-- form-group -->
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" htmlFor="aptNotes">Apt. Notes</label>
+                    <label class="col-sm-2 control-label" for="aptNotes">Apt. Notes</label>
                     <div class="col-sm-10">
             <textarea class="form-control" rows="4" cols="50"
                       id="aptNotes" placeholder="Appointment Notes"></textarea>
