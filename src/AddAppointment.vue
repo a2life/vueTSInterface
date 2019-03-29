@@ -8,6 +8,7 @@
 
         <div class="panel-body"
              :class="{ hide: hidepanel }">
+            <!-- class "hide" is a part of bootstrap CSS -->
 
             <form class="add-appointment form-horizontal">
 
