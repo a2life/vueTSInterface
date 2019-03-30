@@ -6,4 +6,9 @@ var vm = new Vue({
     el: '#app',
     render: function (h) { return h(App); }
 });
+$(document).on('keypress', 'input:not(textarea)', function (e) {
+    if (e.key == 'Enter') {
+        e.preventDefault();
+    } //prevent form from submitting when hit 'Enter'
+});
 //# sourceMappingURL=main.js.map
