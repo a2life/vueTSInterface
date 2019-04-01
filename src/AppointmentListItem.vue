@@ -2,7 +2,7 @@
     <li class="pet-item media">
 
         <div class="media-left">
-            <button class="pet-delete btn btn-xs btn-danger">
+            <button class="pet-delete btn btn-xs btn-danger" @click="requestRemoval">
                 <span class="glyphicon glyphicon-remove"></span></button>
         </div><!-- media-left -->
 
@@ -34,6 +34,11 @@
         props: {appointment:{
             type: Object as ()=>app
             }},
+        methods: {
+          requestRemoval: function(){
+              this.$parent.$emit('removeRecord',this.appointment);
+          }
+        },
         computed: {
             formattedDate: function(){
                return moment(this.appointment.aptDate).format('MM-DD-YY, h:mm a');

@@ -1,7 +1,7 @@
 <template>
     <div id="main-app">
         <add-appointment @addRecord="addAppointment" ></add-appointment>
-        <appointment-list v-bind:appointments = 'appointments' ></appointment-list>
+        <appointment-list v-bind:appointments = 'appointments' @removeRecord="removeAppointment"></appointment-list>
 
     </div>
 </template>
@@ -10,6 +10,7 @@
  import Vue from 'vue';
  import aList from './AppointmentsList.vue';
  import addAppointment from './AddAppointment.vue';
+ import * as _ from 'lodash';
  interface app {petName:string; petOwner:string; aptDate:string; aptNotes:string }
 
     export default Vue.extend(  {
@@ -30,6 +31,10 @@
         methods: {
             addAppointment : function(item:app){
                  this.appointments.push(item)
+
+            },
+            removeAppointment: function(item:app){
+                this.appointments = _.without(this.appointments, item)
 
             }
         }
