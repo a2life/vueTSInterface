@@ -9,15 +9,15 @@
         <div class="pet-info media-body">
 
             <div class="pet-head">
-                <span class="pet-name">{{appointment.petName}}</span>
+                <span class="pet-name" contenteditable="true" ref="petName" @blur="editItem('petName')">{{appointment.petName}}</span>
                 <span class="apt-date pull-right">{{this.formattedDate}}</span>
             </div><!-- pet-head -->
 
             <div class="owner-name">
-                <span class="label-item">Owner:</span>
-                <span>{{appointment.petOwner}}</span>
+                <span class="label-item" >Owner:</span>
+                <span contenteditable="true" ref="petOwner" @blur="editItem('petOwner')">{{appointment.petOwner}}</span>
             </div>
-            <div class="apt-notes">{{appointment.aptNotes}}</div>
+            <div class="apt-notes" contenteditable="true" ref="aptNotes" @blur="editItem('aptNotes')">{{appointment.aptNotes}}</div>
 
         </div><!-- pet-info -->
 
@@ -29,6 +29,7 @@
     import Vue from 'vue';
     import * as moment from 'moment';
    interface app {petName:string; petOwner:string; aptDate:string; aptNotes:string }
+   type reference ='petName'|'petOwner'|'aptDate'|'aptNotes';
     export default Vue.extend( {
         name: "AppointmentListItem",
         props: {appointment:{
@@ -37,7 +38,10 @@
         methods: {
           requestRemoval: function(){
               this.$parent.$emit('removeRecord',this.appointment);
-          }
+          },
+            editItem: function(myRef: reference){
+              this.appointment[myRef] =  (<HTMLElement>this.$refs[myRef]).innerHTML;
+            }
         },
         computed: {
             formattedDate: function(){
