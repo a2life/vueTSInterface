@@ -21,3 +21,6 @@ Preliquisite
 
 
 IDE used :  WebStorm with TypeScript service running
+
+'yarn dev' to start live server without writing compiled files.
+'yarn build' to build codes in production mode
