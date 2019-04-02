@@ -1,6 +1,6 @@
-##Vue.js Building an Interface, TypeScript version
+## Vue.js Building an Interface, TypeScript version
 
-####This is a rehash of Linkedin Education's video course Vue.js:Building an Interface
+#### This is a rehash of Linkedin Education's video course Vue.js:Building an Interface
 
 Original course is <a href="https://www.linkedin.com/learning/vue-js-building-an-interface/building-the-search-component?showBanner=consumer_migration">here</a> with gitHub library <a href="https://github.com/planetoftheweb/vueinterface/">here</a>
 
