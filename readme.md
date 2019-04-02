@@ -15,8 +15,8 @@ Change Points
 Overall, 'webpack.config.js' has been massaged a lot.  
 The component's script session  uses lang='ts' and export object is Vue.extend type.
 
-Preliquisite 
-- npm installed globally
+Preriquisites 
+- nodejs installed globally
 - yarn installed globally
 
 
