@@ -1,7 +1,7 @@
 <template>
     <div id="main-app">
         <add-appointment @addRecord="addAppointment" ></add-appointment>
-        <search-appointment></search-appointment>
+        <search-appointment @searchRecords="searchAppointments"></search-appointment>
         <appointment-list v-bind:appointments = 'appointments' @removeRecord="removeAppointment"></appointment-list>
 
     </div>
@@ -19,7 +19,9 @@
         name: 'MainApp',
         data(){
             return {
-                appointments: [] as app[]
+                appointments: [] as app[],
+                searchTerms: ""
+
             }
         },
         components: {
@@ -39,6 +41,9 @@
             removeAppointment: function(item:app){
                 this.appointments = _.without(this.appointments, item)
 
+            },
+            searchAppointments: function(terms:string){
+                this.searchTerms = terms
             }
         }
     })

@@ -5,7 +5,7 @@
             <div class="input-group">
 
                 <input id="SearchApts" placeholder="Search" type="text" class="form-control"
-                       aria-label="Search Appointments"/>
+                       aria-label="Search Appointments" v-model="searchTerm" />
 
                 <div class="input-group-btn">
                     <button type="button" class="btn btn-primary dropdown-toggle"
@@ -37,7 +37,17 @@
     import Vue from 'vue';
 
     export default Vue.extend({
-        name: "SearchAppointment"
+        name: "SearchAppointment",
+        data(){
+            return {
+                searchTerm:""
+            }
+        },
+        watch : {
+            searchTerm : function(){
+                this.$emit('searchRecords',this.searchTerm);
+            }
+        }
     })
 </script>
 
