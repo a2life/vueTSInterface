@@ -2,7 +2,7 @@
     <div id="main-app">
         <add-appointment @addRecord="addAppointment" ></add-appointment>
         <search-appointment @searchRecords="searchAppointments"></search-appointment>
-        <appointment-list v-bind:appointments = 'appointments' @removeRecord="removeAppointment"></appointment-list>
+        <appointment-list v-bind:appointments = 'filteredApts' @removeRecord="removeAppointment"></appointment-list>
 
     </div>
 </template>
@@ -44,6 +44,17 @@
             },
             searchAppointments: function(terms:string){
                 this.searchTerms = terms
+            }
+        },
+        computed: {
+            filteredApts : function(){
+                return this.appointments.filter((item)=>{
+                    return (
+                        item.petName.toLocaleLowerCase().match(this.searchTerms.toLowerCase()) ||
+                        item.petOwner.toLocaleLowerCase().match(this.searchTerms.toLowerCase()) ||
+                        item.aptNotes.toLocaleLowerCase().match(this.searchTerms.toLowerCase())
+                    ) //used fat arrow function to bind inner 'this' to the calling function
+                })
             }
         }
     })
