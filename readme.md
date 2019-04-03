@@ -1,6 +1,6 @@
 ## Vue.js Building an Interface, TypeScript version
 
-#### This is a rehash of Linkedin Education's video course Vue.js:Building an Interface
+#### This is a rehash of Linkedin Education's video course Vue.js:Building an Interface by Ray Villalobos
 
 Original course is <a href="https://www.linkedin.com/learning/vue-js-building-an-interface/building-the-search-component?showBanner=consumer_migration">here</a> with gitHub library <a href="https://github.com/planetoftheweb/vueinterface/">here</a>
 
@@ -13,8 +13,8 @@ Change Points
 - Since no dynamic compilation takes place (because everything is in vue component files and main.ts does not contain pre-compiled template expression) use of 'vue/dist/vue.esm.js' has been commented out.
 - textExtract plugin has been replaced with miniCSSExtract plugin
 
-Overall, 'webpack.config.js' has been heavily modifiedt.  
-The component's script secsions  use lang='ts' and export object is Vue.extend type.
+Overall, 'webpack.config.js' has been heavily modified.  
+The component's script secsions  use lang='ts' and exported object is of type Vue.extend.
 
 Preriquisites 
 - nodejs installed globally
