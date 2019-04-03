@@ -8,12 +8,13 @@ Original course is <a href="https://www.linkedin.com/learning/vue-js-building-an
 Change Points
 - Use of TypeScript in place of Babel as a transpiler. Obviously this required additional type and interface declarations.
 - Webpack is version 4, not version 3.
+- Use of webpack-html-plugin to auto-generate index.html from a template index.ejs file, so the references to js and css files are auto-inserted with correct path.
 - Vue-loader is version 15. Now a declaration of VueLoaderPlugin in webpack.config.js is mandatory
 - Since no dynamic compilation takes place (because everything is in vue component files and main.ts does not contain pre-compiled template expression) use of 'vue/dist/vue.esm.js' has been commented out.
 - textExtract plugin has been replaced with miniCSSExtract plugin
 
-Overall, 'webpack.config.js' has been massaged a lot.  
-The component's script session  uses lang='ts' and export object is Vue.extend type.
+Overall, 'webpack.config.js' has been heavily modifiedt.  
+The component's script secsions  use lang='ts' and export object is Vue.extend type.
 
 Preriquisites 
 - nodejs installed globally
