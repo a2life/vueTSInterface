@@ -18,10 +18,11 @@ The component's script secsions  use lang='ts' and exported object is of type Vu
 
 Preriquisites 
 - nodejs installed globally
-- yarn installed globally
+- yarn or npm installed globally
 
 
 IDE used :  WebStorm with TypeScript service running
 
+'yarn install' or 'npm install' for initial creation of the environment,  then
 'yarn dev' to start live server without writing compiled files.
 'yarn build' to build codes in production mode
