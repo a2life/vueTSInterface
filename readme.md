@@ -14,7 +14,7 @@ Change Points
 - textExtract plugin has been replaced with miniCSSExtract plugin
 
 Overall, 'webpack.config.js' has been heavily modified.  
-The component's script secsions  use lang='ts' and exported object is of type Vue.extend.
+The component's script secsions  use lang='ts' and exported objects are of type 'Vue.extend'.
 
 Preriquisites 
 - nodejs installed globally
@@ -24,5 +24,7 @@ Preriquisites
 IDE used :  WebStorm with TypeScript service running
 
 'yarn install' or 'npm install' for initial creation of the environment,  then
+
 'yarn dev' to start live server without writing compiled files.
+
 'yarn build' to build codes in production mode

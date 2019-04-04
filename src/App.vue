@@ -75,7 +75,7 @@
                         item.petName.toLocaleLowerCase().match(this.searchTerms.toLowerCase()) ||
                         item.petOwner.toLocaleLowerCase().match(this.searchTerms.toLowerCase()) ||
                         item.aptNotes.toLocaleLowerCase().match(this.searchTerms.toLowerCase())
-                    ) //used fat arrow function to bind inner 'this' to the calling function
+                    ) //used fat arrow function to bind inner 'this' lexically and not by calling context;
                 })
             },
             sortedAppointments: function () {
